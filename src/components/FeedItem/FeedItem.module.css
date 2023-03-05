@@ -140,10 +140,17 @@
   flex-direction: column;
 }
 
-.price {
+.pricePerDay {
   font-size: 24px;
   font-weight: 600;
-  margin: 10px 0;
+  /* margin: 10px 0; */
+}
+
+.totalPrice {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: rgb(137, 137, 137);
 }
 
 .button {

@@ -45,6 +45,16 @@ function FeedItem(props: Props) {
     });
   }, [props.vehicle]);
 
+  let currencySymbol = "$";
+
+  if (props.totalCharge["@CurrencyCode"] === "EUR") {
+    currencySymbol = "€";
+  } else if (props.totalCharge["@CurrencyCode"] === "GBP") {
+    currencySymbol = "£";
+  } else if (props.totalCharge["@CurrencyCode"] === "BTC") {
+    currencySymbol = "₿";
+  }
+
   return (
     <>
       {showingFullScreen && (
@@ -120,8 +130,16 @@ function FeedItem(props: Props) {
 
             <div className={styles.priceContainer}>
               Price for {props.days} days:
-              <div className={styles.price}>
-                {props.totalCharge["@CurrencyCode"]}{" "}
+              <div className={styles.pricePerDay}>
+                {currencySymbol}
+                {(
+                  parseFloat(props.totalCharge["@EstimatedTotalAmount"]) /
+                  props.days
+                ).toFixed(2)}{" "}
+                / Day
+              </div>
+              <div className={styles.totalPrice}>
+                Total: {currencySymbol}
                 {props.totalCharge["@RateTotalAmount"]}
               </div>
               <div className={styles.pickUpFrom}>
