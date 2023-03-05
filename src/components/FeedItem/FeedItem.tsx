@@ -84,11 +84,11 @@ function FeedItem(props: Props) {
 
         <div className={styles.mainContent}>
           <header className={styles.header}>
-            <div className={styles.vehicleName}>
+            <div className={styles.vehicleName} data-testid="vehicleName">
               {props.vehicle.VehMakeModel["@Name"]}
             </div>
             <img
-              src={`${props.vendorName}.png`}
+              src={`./${props.vendorName.toLowerCase()}.png`}
               alt="vendor"
               className={styles.vendor}
             />

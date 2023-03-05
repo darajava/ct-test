@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# CT tech test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I used CRA to start the project and [CSSModules](https://github.com/css-modules/css-modules) to style the elements. I started this project with TypeScript and used minimal other dependencies. I tried to keep the code as modular as possible and used generic components where I could. The UI design aims to be simple, clean and fluid. The code is highly extensible.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+#### Typed schema
 
-### `npm start`
+I wrote out types for what the API returns. This was helpful in building the components and passing useful information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Fetching
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I save the data.json locally, but read it as I would with `fetch` (I struggled with CORS issues for a while).
 
-### `npm test`
+#### Loading screen
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I purposefully delay the response to show a loading screen with multiple messages sent out to the end user.
 
-### `npm run build`
+#### Code re-use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I reused the same code for the small and large version of the car details. I recursively add the fullscreen mode.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Ordering
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I abstracted the feed generation to `Feed.tsx`, which handles parsing of the API response and applying any user-defined orderings. Orderings can be ascending or descending, with the default being price ascending.
 
-### `npm run eject`
+#### Animations
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I added some animations when the UI reorders to make it seem more fluid to the user.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Shadow elements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Before the API loads, there is a shadow version of the car details to show the user the skeleton of the UI.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Instructions
 
-## Learn More
+`npm run test` to run the test "suite"
+`npm run deploy` to deploy to GitHub Pages
+`npm run build` to get a deployment-ready build for production.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Limitations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Mobile mode is supported (i.e. it works) but it doesn't look very nice as I was running out of time (I use responsive CSS queries).
+- Test suites are limited. I only tested Feed.test.tsx, but it serves as an example of how I would test the whole app.
+- I incorporated pickup into the card instead of creating a Legend at the top.
+- Due to the small size of the project, I put some logic and markup in `App.tsx`. I would ordinarily abstract this more.

@@ -32,13 +32,13 @@ function App() {
   }, []);
 
   let content = (
-    <>
+    <div className={styles.shadowContainer}>
       <ShadowFeedItem />
       <ShadowFeedItem />
       <ShadowFeedItem />
       <ShadowFeedItem />
       <Loading />
-    </>
+    </div>
   );
   if (availableVendors.length > 0) {
     content = (
