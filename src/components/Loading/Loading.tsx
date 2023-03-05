@@ -6,8 +6,8 @@ import styles from "./Loading.module.css";
 function Loading() {
   const messages = [
     "Looking for cars...",
-    "Still looking...",
-    "This is hard. Last try...",
+    "It doesn't actually take this long.",
+    "This delay is simulated to show off the loading screen :)",
   ];
 
   const [displayMessage, setDisplayMessage] = useState(0);

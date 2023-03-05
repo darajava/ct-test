@@ -137,7 +137,7 @@ function FeedItem(props: Props) {
                   }
                 }}
               >
-                {props.fullscreen ? "Close" : "View more"}
+                {props.fullscreen ? "Close" : "View details"}
               </button>
             </div>
           </div>
