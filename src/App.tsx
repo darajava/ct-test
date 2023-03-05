@@ -4,6 +4,7 @@ import { CTResponse } from "./APITypes";
 import styles from "./App.module.css";
 import Feed from "./components/Feed/Feed";
 import ShadowFeedItem from "./components/FeedItem/ShadowFeedItem";
+import Legend from "./components/Legend/Legend";
 import Loading from "./components/Loading/Loading";
 
 export type OrderBy = "price" | "doors" | "bags" | "passengers";
@@ -59,26 +60,31 @@ function App() {
         <span className={styles.rightHidden}></span>
       </header>
       <main className={styles.main}>
-        <div className={styles.orderByContainer}>
-          Sort by:
-          <select
-            className={styles.orderBy}
-            value={ordering}
-            onChange={(e) => setOrdering(e.target.value as any)}
-          >
-            <option value="price">Price</option>
-            <option value="doors">Door Count</option>
-            <option value="bags">Bags</option>
-            <option value="passengers">Passengers</option>
-          </select>
-          <select
-            className={styles.orderBy}
-            value={ascending ? "asc" : "desc"}
-            onChange={(e) => setAscending(e.target.value === "asc")}
-          >
-            <option value="asc">Low to High</option>
-            <option value="desc">High to Low</option>
-          </select>
+        <div className={styles.topBar}>
+          <Legend
+            vehRentalCore={availableVendors[0]?.VehAvailRSCore.VehRentalCore}
+          />
+          <div className={styles.orderByContainer}>
+            Sort by:
+            <select
+              className={styles.orderBy}
+              value={ordering}
+              onChange={(e) => setOrdering(e.target.value as any)}
+            >
+              <option value="price">Price</option>
+              <option value="doors">Door Count</option>
+              <option value="bags">Bags</option>
+              <option value="passengers">Passengers</option>
+            </select>
+            <select
+              className={styles.orderBy}
+              value={ascending ? "asc" : "desc"}
+              onChange={(e) => setAscending(e.target.value === "asc")}
+            >
+              <option value="asc">Low to High</option>
+              <option value="desc">High to Low</option>
+            </select>
+          </div>
         </div>
         {content}
       </main>
