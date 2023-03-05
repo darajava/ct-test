@@ -1,0 +1,53 @@
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.559);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.main {
+  padding: 20px;
+  flex: 1;
+}
+
+.logo {
+  width: 40px;
+}
+
+.rightHidden {
+  width: 40px;
+  opacity: 0;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.orderByContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.orderBy {
+  border: 0;
+  padding: 10px;
+  outline: 0;
+}
