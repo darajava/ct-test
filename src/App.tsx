@@ -28,6 +28,7 @@ function App() {
       })
       .catch((error) => {
         // TODO: More advanced error handling
+        console.error(error);
         alert("Something went wrong when fetching cars");
       });
   }, []);

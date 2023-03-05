@@ -17,3 +17,19 @@
   margin-top: 5px;
   color: #999;
 }
+
+@media (max-width: 600px) {
+  .pickUp {
+    text-align: center;
+  }
+  .legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    /* width: 100%; */
+    /* height: 100%; */
+  }
+}
