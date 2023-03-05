@@ -34,8 +34,10 @@ Before the API loads, there is a shadow version of the car details to show the u
 
 ## Instructions
 
-`npm run test` to run the test "suite"
-`npm run deploy` to deploy to GitHub Pages
+`npm run test` to run the test "suite".
+
+`npm run deploy` to deploy to GitHub Pages.
+
 `npm run build` to get a deployment-ready build for production.
 
 ## Limitations
